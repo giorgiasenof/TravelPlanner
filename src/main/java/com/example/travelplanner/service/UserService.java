@@ -5,6 +5,7 @@ import com.example.travelplanner.dto.UserDTO;
 import com.example.travelplanner.mapper.UserMapper;
 import com.example.travelplanner.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service

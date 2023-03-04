@@ -1,9 +1,9 @@
 package com.example.travelplanner.model;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 
@@ -11,19 +11,19 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "users")
+@Table(name = "managers")
 
-public class User {
+public class Manager {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idUser;
-
+    private long id;
     @Column(unique = true)
-    private String email;
+    private String username;
 
     private String password;
 
-    private int phone;
+    private String email;
 
+    private String country;
 }
