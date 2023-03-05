@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(value = "manager")
 
-public class ManagerController {
+public class ManagerController extends AbstractController <ManagerDTO> {
 
-    @Autowired
+   @Autowired
     private ManagerService managerService;
 
     @PostMapping(value = "/login")

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping (value = "user")
 
-public class UserController {
+public class UserController extends AbstractController <UserDTO> {
 
     @Autowired
     private UserService userService;
@@ -19,10 +19,16 @@ public class UserController {
              return userService.findByEmailAndPassword(email, password);
         }
 
-    @PostMapping("/register")
+    /*@PostMapping("/register")
     public ResponseEntity<UserDTO> register(@RequestBody UserDTO userDTO) {
         UserDTO userNew = userService.register(userDTO);
         return ResponseEntity.ok(userNew);
+    }*/
+
+    @PostMapping(value="/register")
+    public UserDTO insert( @RequestBody UserDTO userDTO) {
+        UserDTO user = userService.insert(userDTO);
+        return user;
     }
 
 
