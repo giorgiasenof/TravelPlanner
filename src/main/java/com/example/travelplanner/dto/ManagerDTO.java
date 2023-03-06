@@ -9,10 +9,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class, property="id_manager", scope = ManagerDTO.class)
+@JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class, property="idanager", scope = ManagerDTO.class)
 public class ManagerDTO {
 
-    private long id_manager;
+    private long idManager;
 
     private String username;
 

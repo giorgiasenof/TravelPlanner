@@ -17,14 +17,14 @@ public class Request{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id_request;
+    private long idRequest;
 
     @ManyToOne
-    @JoinColumn(name = "id_user", referencedColumnName = "id_user")
-    private User id_user;
+    @JoinColumn(name = "idUser", referencedColumnName = "idUser")
+    private User idUser;
     @ManyToOne
-    @JoinColumn(name = "id_manager", referencedColumnName = "id_manager")
-    private Manager id_manager;
+    @JoinColumn(name = "idManager", referencedColumnName = "idManager")
+    private Manager idManager;
 
     @Column(unique = true)
     private String type;

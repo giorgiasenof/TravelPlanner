@@ -15,7 +15,7 @@ public class ManagerConverter extends AbstractConverter<Manager, ManagerDTO>{
     public Manager toEntity(ManagerDTO managerDTO) {
         Manager manager = null;
         if (managerDTO != null)
-            manager = new Manager(managerDTO.getId_manager(), managerDTO.getUsername(), managerDTO.getPassword(), managerDTO.getCountry(),managerDTO.getEmail());
+            manager = new Manager(managerDTO.getIdManager(), managerDTO.getUsername(), managerDTO.getPassword(), managerDTO.getCountry(),managerDTO.getEmail());
         return manager;
     }
 
@@ -24,7 +24,7 @@ public class ManagerConverter extends AbstractConverter<Manager, ManagerDTO>{
     public ManagerDTO toDTO(Manager manager) {
         ManagerDTO managerDTO = null;
         if (manager != null) {
-            managerDTO = new ManagerDTO(manager.getId_manager(), manager.getUsername(), manager.getPassword(), manager.getCountry(), manager.getEmail());
+            managerDTO = new ManagerDTO(manager.getIdManager(), manager.getUsername(), manager.getPassword(), manager.getCountry(), manager.getEmail());
         }
         return managerDTO;
     }

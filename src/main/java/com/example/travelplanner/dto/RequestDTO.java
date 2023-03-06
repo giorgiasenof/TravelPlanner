@@ -15,6 +15,7 @@ import java.util.Date;
 public class RequestDTO {
 
 
+    private long idRequest;
     private String type;
 
     private Date date;
@@ -23,9 +24,9 @@ public class RequestDTO {
 
     private String historical;
 
-    private ManagerDTO id_manager;
+    private ManagerDTO idManager;
 
-    private UserDTO id_user;
+    private UserDTO iduser;
 
 
 }
