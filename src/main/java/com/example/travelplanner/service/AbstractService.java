@@ -11,10 +11,8 @@ import java.util.List;
 @Service
 public abstract class AbstractService<Entity, DTO> implements ServiceDTO<DTO> {
 
-    @Autowired
     protected CrudRepository<Entity, Long> crudRepository;
 
-    @Autowired
     protected Converter<Entity, DTO> converter;
 
     public AbstractService() {

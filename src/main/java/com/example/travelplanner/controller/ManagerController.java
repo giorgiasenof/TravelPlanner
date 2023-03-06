@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(value = "manager")
 
-public class ManagerController extends AbstractController <ManagerDTO> {
+public class ManagerController extends AbstractController<ManagerDTO> {
 
    @Autowired
     private ManagerService managerService;
@@ -17,4 +17,6 @@ public class ManagerController extends AbstractController <ManagerDTO> {
     public ManagerDTO login(@RequestParam String username, String password) {
         return managerService.findByUsernameAndPassword(username, password);
     }
+
+
 }

@@ -3,14 +3,19 @@ package com.example.travelplanner.service;
 import com.example.travelplanner.converter.UserConverter;
 import com.example.travelplanner.dao.UserRepository;
 import com.example.travelplanner.dto.UserDTO;
+import com.example.travelplanner.exception.UserAlreadyExistsException;
 import com.example.travelplanner.model.User;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 public class UserService extends AbstractService<User, UserDTO> {
-    //UserMapper userMapper = UserMapper.INSTANCE;
 
+    //UserMapper userMapper = UserMapper.INSTANCE;
 
     @Autowired
     private UserRepository repository;
@@ -22,10 +27,12 @@ public class UserService extends AbstractService<User, UserDTO> {
         return converter.toDTO(repository.findByEmailAndPassword(email, password));
     }
 
-    public UserDTO insert(UserDTO userDTO) {
-        User user = converter.toEntity(userDTO);
-        User userSalvata = repository.save(user);
-        return converter.toDTO(userSalvata);
+    public UserDTO insert(User user) {
+        if (repository.findByEmail(user.getEmail()).isPresent()) {
+            throw new UserAlreadyExistsException("User con email " + user.getEmail() + " esistente, inseriscine un altra!");
+        }
+        repository.save(user);
+        return null;
     }
 
 }
