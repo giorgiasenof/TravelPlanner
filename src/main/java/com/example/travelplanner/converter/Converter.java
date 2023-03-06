@@ -1,5 +1,6 @@
 package com.example.travelplanner.converter;
 
+
 import java.util.List;
 
 public interface Converter<Entity,DTO> {

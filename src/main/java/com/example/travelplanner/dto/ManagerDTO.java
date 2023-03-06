@@ -9,10 +9,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class, property="id", scope = UserDTO.class)
+@JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class, property="id_manager", scope = ManagerDTO.class)
 public class ManagerDTO {
 
-    private long id;
+    private long id_manager;
 
     private String username;
 
@@ -21,4 +21,5 @@ public class ManagerDTO {
     private String email;
 
     private String country;
+
 }

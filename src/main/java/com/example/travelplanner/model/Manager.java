@@ -16,7 +16,7 @@ public class Manager {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long id_manager;
     @Column(unique = true)
     private String username;
 

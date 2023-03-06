@@ -16,8 +16,8 @@ import javax.persistence.GenerationType;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idUser;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id_user;
 
     @Column(unique = true)
     private String email;
@@ -25,5 +25,9 @@ public class User {
     private String password;
 
     private int phone;
+
+    private String username;
+
+
 
 }

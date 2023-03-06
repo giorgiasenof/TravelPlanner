@@ -8,8 +8,8 @@ import com.example.travelplanner.model.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.Entity;
 import java.util.List;
 
 @Service
@@ -27,7 +27,7 @@ public class UserService extends AbstractService<User, UserDTO> {
         return converter.toDTO(repository.findByEmailAndPassword(email, password));
     }
 
-    public UserDTO insert(User user) {
+    public User insert(User user) {
         if (repository.findByEmail(user.getEmail()).isPresent()) {
             throw new UserAlreadyExistsException("User con email " + user.getEmail() + " esistente, inseriscine un altra!");
         }

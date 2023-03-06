@@ -1,5 +1,6 @@
 package com.example.travelplanner.converter;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +11,7 @@ public abstract class AbstractConverter<Entity,DTO> implements Converter<Entity,
 
         if(listDTO != null) {
             for (DTO dto:listDTO) {
-                Entity entity = toEntity(dto);
+                Entity entity = toEntity((DTO) dto);
                 list.add(entity);
             }
         }
@@ -29,6 +30,5 @@ public abstract class AbstractConverter<Entity,DTO> implements Converter<Entity,
         }
         return list;
     }
-
 
 }
