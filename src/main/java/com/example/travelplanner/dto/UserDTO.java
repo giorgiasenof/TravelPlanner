@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class, property="id_user", scope = UserDTO.class)
+@JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class, property="idUser", scope = UserDTO.class)
 
 public class UserDTO {
 

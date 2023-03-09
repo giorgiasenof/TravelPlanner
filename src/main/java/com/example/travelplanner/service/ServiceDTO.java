@@ -1,5 +1,8 @@
 package com.example.travelplanner.service;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public interface ServiceDTO<DTO> {
 
     public Iterable<DTO> getAll();

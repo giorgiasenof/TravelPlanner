@@ -15,14 +15,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping (value = "user")
+@CrossOrigin("http://localhost:4200")
 
 public class UserController extends AbstractController<UserDTO> {
 
     @Autowired
     private UserService userService;
-
-    @Autowired
-    private UserRepository userRepository;
 
     @PostMapping(value = "/login")
         public UserDTO login(@RequestBody LoginDTO loginDTO) {

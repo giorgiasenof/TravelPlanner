@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 public abstract class AbstractController<DTO>{
 
-
+@Autowired
     private ServiceDTO<DTO> service;
 
     @GetMapping("/getall")

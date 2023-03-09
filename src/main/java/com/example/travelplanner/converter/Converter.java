@@ -1,8 +1,10 @@
 package com.example.travelplanner.converter;
 
 
-import java.util.List;
+import org.springframework.stereotype.Component;
 
+import java.util.List;
+@Component
 public interface Converter<Entity,DTO> {
 
         public Entity toEntity(DTO dto);

@@ -22,7 +22,7 @@ public class UserConverter  extends AbstractConverter<User, UserDTO>{
     public UserDTO toDTO(User user) {
         UserDTO userDTO = null;
         if (user != null) {
-            userDTO = new UserDTO(user.getIdUser(),user.getEmail(), user.getPassword(),user.getPhone(), userDTO.getUsername());
+            userDTO = new UserDTO(user.getIdUser(),user.getEmail(), user.getPassword(),user.getPhone(), user.getUsername());
         }
         return userDTO;
     }
